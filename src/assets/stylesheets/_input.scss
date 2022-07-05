@@ -1,0 +1,63 @@
+header {
+  display: flex;
+  @include dimensions(100%,100%);
+  
+  nav {
+    @include flexContainer(center,center);
+    @include dimensions(auto, 50px);
+    z-index: 2;
+    text-align: start;
+
+    .input-box {
+      @include flexContainer(center, center, row);
+      @include dimensions(auto,100%);
+      @include boxShadow;
+      @include border(false,false,false,3.1rem);
+
+      background-color: $bgColor;
+      min-width: 3.1rem;
+      padding: 0 0.6rem;
+      cursor: pointer;
+
+      & svg {
+        transition: 0.6s;
+        font-size: 1.25rem;
+        color: #86a8e7;
+        width:1.6rem;
+      }
+
+      
+      & input {
+        @include dimensions(0,100%);
+
+        font-size: 1rem;
+        font-family: inherit;
+        font-weight: map-get($fontWeights,"medium");
+
+        color:$secondaryFontColor;
+        caret-color: $mainFontColor;
+        background-color: transparent;
+
+        transition: 0.4s;
+        
+        &::placeholder {
+          color: $mainFontColor;
+        }
+      }
+
+      &:hover input,
+      &:focus input,
+      &:focus-within input{
+        @include dimensions(18rem, auto);
+        padding-left:1rem;
+      }
+
+
+      &:hover svg,
+      &:focus svg,
+      &:focus-within svg{
+        transform: rotate(1080deg);
+      }
+    }
+  }
+}

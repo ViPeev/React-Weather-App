@@ -1,0 +1,121 @@
+$mainFont: "Arima", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+$secondaryFont: "Gentium Book Plus", Impact, Haettenschweiler,
+  "Arial Narrow Bold", sans-serif;
+$mainFontColor: rgb(94, 88, 88);
+$secondaryFontColor: rgba(51, 50, 50, 0.87);
+$mainFontSize: clamp(1.5rem,6vw,2rem);
+$bgColor: rgb(255, 255, 255);
+$bgColor-opaque: rgba(255, 255, 255, 0.61);
+$fontWeights: (
+  "regular": 250,
+  "medium": 400,
+  "bold": 600,
+);
+
+@mixin gradient() {
+  background: #7f7fd5; /* fallback for old browsers */
+  background: url("./assets/images/Tesselation-Transition.jpg"),
+    -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #91eae4bd, #86a8e7af, #7f7fd5c4),
+    url("./assets/images/Tesselation-Transition.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@mixin gradient-2() {
+  background: linear-gradient(to bottom, #e6e6e675, #7f7fd548),
+    url("assets/images/data-background-image.jpeg");
+  background-size: cover;
+}
+
+@mixin spin() {
+  -webkit-animation: spin 0.6s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: spin 0.6s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin fade-in() {
+  --webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin margin-center() {
+  margin: -1rem auto 0 auto;
+}
+
+@mixin flexContainer($posY, $posX, $direction: column) {
+  display: flex;
+  align-items: $posY;
+  justify-content: $posX;
+  flex-direction: $direction;
+}
+
+@mixin boxShadow() {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+@mixin boxShadow-2() {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@mixin borderBottom($color) {
+  border-bottom: 2px $color solid;
+}
+
+@mixin border($style: solid, $width: 0px, $color: transparent, $radius: 10px) {
+  border: $style $width $color;
+  border-radius: $radius;
+}
+
+.text-underline {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+// Keyframes
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
