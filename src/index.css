@@ -143,7 +143,7 @@ header nav .input-box:hover svg, header nav .input-box:focus svg, header nav .in
 }
 .grid-data-container .city-info .city-name {
   font-family: "Gentium Book Plus", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-size: clamp(1.4rem, 6vw, 2.1rem);
   font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 10px;
@@ -167,7 +167,7 @@ header nav .input-box:hover svg, header nav .input-box:focus svg, header nav .in
   flex-wrap: wrap;
 }
 .grid-data-container .weather-info .temp {
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-size: clamp(1.4rem, 6vw, 2.1rem);
   font-weight: 600;
   margin-bottom: 0.6rem;
 }
@@ -182,7 +182,7 @@ header nav .input-box:hover svg, header nav .input-box:focus svg, header nav .in
 .grid-data-container .add-info {
   grid-area: add-info;
   width: 100%;
-  height: 100%;
+  height: 90%;
   overflow: auto;
   white-space: nowrap;
   pointer-events: all;
@@ -200,7 +200,7 @@ header nav .input-box:hover svg, header nav .input-box:focus svg, header nav .in
   border-radius: 10px;
 }
 .grid-data-container .add-info .box {
-  width: clamp(25%, 9rem, 90%);
+  width: clamp(30%, 8rem, 60%);
   height: clamp(75%, 10rem, 80%);
   display: inline-flex;
   flex-direction: column;

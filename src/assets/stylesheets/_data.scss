@@ -73,7 +73,7 @@
 
   .add-info {
     grid-area: add-info;
-    @include dimensions(100%, 100%);
+    @include dimensions(100%, 90%);
 
     overflow: auto;
     white-space: nowrap;
@@ -95,7 +95,7 @@
     }
 
     .box {
-      @include dimensions(clamp(25%, 9rem,90%), clamp(75%, 10rem,80%));
+      @include dimensions(clamp(30%, 8rem,60%), clamp(75%, 10rem,80%));
       display: inline-flex;
       flex-direction: column;
       align-content: center;
