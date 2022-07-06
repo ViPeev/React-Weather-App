@@ -33,7 +33,7 @@ body {
   .main-container {
     @include dimensions(clamp(300px, 90%, 400px), clamp(550px,80vh,480px));
     @include boxShadow-2;
-    margin: -1rem auto 0 auto;
+    @include margin-center;
     @include border(false,false,false,10px);
     @include fade-in;
 
