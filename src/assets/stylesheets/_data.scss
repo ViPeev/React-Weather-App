@@ -31,6 +31,7 @@
     grid-area: city-info;
     @include flexContainer(center, center);
     gap: 0.5rem;
+    margin-bottom:1rem;
 
     & .city-name {
       font-family: $secondaryFont;
@@ -95,7 +96,7 @@
     }
 
     .box {
-      @include dimensions(clamp(30%, 8rem,60%), clamp(75%, 10rem,80%));
+      @include dimensions(clamp(30%, 6rem,60%), clamp(75%, 10rem,80%));
       display: inline-flex;
       flex-direction: column;
       align-content: center;
@@ -106,7 +107,7 @@
       margin: 0.6rem;
 
       & svg {
-        font-size: clamp(2rem,8vw,2.5rem);
+        font-size: clamp(1.2rem,6vw,1.8rem);
       }
     }
   }

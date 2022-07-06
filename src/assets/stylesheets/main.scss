@@ -31,7 +31,7 @@ body {
     border-left: solid white 3px;
   }
   .main-container {
-    @include dimensions(clamp(300px, 90%, 400px), clamp(560px,80vh,480px));
+    @include dimensions(clamp(300px, 90%, 400px), clamp(550px,80vh,480px));
     @include boxShadow-2;
     @include margin-center;
     @include border(false,false,false,10px);
