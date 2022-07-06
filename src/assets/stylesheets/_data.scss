@@ -1,5 +1,5 @@
 .bg-blur {
-  @include dimensions(clamp(300px, 100%, 800px), clamp(500px,100%,950px));
+  @include dimensions(clamp(300px, 100%, 800px), clamp(500px, 100%, 950px));
   @include gradient-2;
   position: absolute;
   inset: 0;
@@ -10,11 +10,11 @@
 }
 
 .grid-data-container {
-  @include dimensions(100%, clamp(500px,100%,950px));
+  @include dimensions(100%, clamp(500px, 100%, 950px));
   display: grid;
   inset: 0;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(8, 12.5%);
+  grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     "city-info city-info"
     "weather-info weather-info"
@@ -25,94 +25,93 @@
     "add-info add-info"
     "add-info add-info";
   padding: 1rem;
-  margin-top:1rem;
-
-  .city-info {
-    grid-area: city-info;
-    @include flexContainer(center, center);
-    gap: 0.5rem;
-    margin-bottom:1rem;
-
-    & .city-name {
-      font-family: $secondaryFont;
-      font-size:$mainFontSize;
-      font-weight: map-get($fontWeights, "medium");
-      text-decoration: underline;
-      text-underline-offset: 10px;
-    }
-  }
+  margin-top: 1rem;
 
   .box {
     @include flexContainer(center, center);
     @include border(false, false, false, 0.6rem);
     background-color: $bgColor-opaque;
   }
-
-  .weather-info {
-    grid-area: weather-info;
-
-    @include flexContainer(center, center, row);
-    gap: 0.6rem;
-    flex-wrap:wrap;
-
-
-    & .temp {
-      font-size: $mainFontSize;
-      font-weight: map-get($fontWeights, "bold");
-      margin-bottom: 0.6rem;
-    }
-
-    & svg {
-      font-size: clamp(4rem, 7vw, 5rem);
-      margin-bottom: 0.6rem;
-    }
-
-    .box {
-      @include dimensions(45%,80%);
-    }
-  }
-
-  .add-info {
-    grid-area: add-info;
-    @include dimensions(100%, 90%);
-
-    overflow: auto;
-    white-space: nowrap;
-    pointer-events: all;
-    scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-      width: 1rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 5px grey;
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(80, 80, 80, 0.473);
-      border-radius: 10px;
-    }
-
-    .box {
-      @include dimensions(clamp(30%, 6rem,60%), clamp(75%, 10rem,80%));
-      display: inline-flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center;
-      gap: 5px;
-
-      pointer-events: none;
-      margin: 0.6rem;
-
-      & svg {
-        font-size: clamp(1.2rem,6vw,1.8rem);
-      }
-    }
-  }
 }
 
 time {
   display: block;
+}
+
+.city-info {
+  grid-area: city-info;
+  @include flexContainer(center, center);
+  gap: 0.5rem;
+
+  & .city-name {
+    font-family: $secondaryFont;
+    font-size: $mainFontSize;
+    font-weight: map-get($fontWeights, "medium");
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+}
+
+.weather-info {
+  grid-area: weather-info;
+
+  @include flexContainer(center, center, row);
+  gap: 0.6rem;
+  flex-wrap: wrap;
+
+  & .temp {
+    font-size: $mainFontSize;
+    font-weight: map-get($fontWeights, "bold");
+    margin-bottom: 0.6rem;
+  }
+
+  & svg {
+    font-size: clamp(4rem, 7vw, 5rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .box {
+    @include dimensions(45%, 80%);
+  }
+}
+
+.add-info {
+  grid-area: add-info;
+  @include dimensions(100%, 90%);
+
+  overflow: auto;
+  white-space: nowrap;
+  pointer-events: all;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(80, 80, 80, 0.473);
+    border-radius: 10px;
+  }
+
+  .box {
+    @include dimensions(clamp(30%, 6rem, 60%), clamp(75%, 10rem, 80%));
+    display: inline-flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-top:0.6rem;
+    gap: 5px;
+
+    pointer-events: none;
+    margin: 0.6rem;
+
+    & svg {
+      font-size: clamp(1.2rem, 6vw, 1.8rem);
+    }
+  }
 }
