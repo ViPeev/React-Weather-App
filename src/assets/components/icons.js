@@ -1,7 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon, faCloudSun, faCloudMoon, faCloud, faCloudRain,
-     faCloudShowersHeavy, faCloudBolt, faSnowflake, faSmog } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSun,
+  faMoon,
+  faCloudSun,
+  faCloudMoon,
+  faCloud,
+  faCloudRain,
+  faCloudShowersHeavy,
+  faCloudBolt,
+  faSnowflake,
+  faSmog,
+} from "@fortawesome/free-solid-svg-icons";
 
 let icons = {
   "01d": faSun,
@@ -24,11 +34,8 @@ let icons = {
   "50n": faSmog,
 };
 
-function Icon({handleId}) {
-
-  return (
-    <FontAwesomeIcon icon={icons[handleId]} />
-  );
+function Icon({ handleId }) {
+  return <FontAwesomeIcon icon={icons[handleId]} />;
 }
 
 export default Icon;

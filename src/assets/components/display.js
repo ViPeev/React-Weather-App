@@ -3,15 +3,12 @@ import DateDisplay from "./dateDisplay";
 import Icon from "./icons";
 import AddInfo from "./addInfoCont";
 import ErrorPrompt from "./errorPrompt";
+import PrevSearchDisplay from "./prevSearch";
 
-function Display({ handleData }) {
+function Display({ handleData, prevData, handleSearch }) {
   if (!handleData) {
-    return (
-      <main className="prompt-container blur">
-        <p>Enter the desired location</p>
-      </main>
-    );
-  } 
+    return <PrevSearchDisplay searchFunct={handleSearch} prevData={prevData} />;
+  }
 
   if (handleData === "Error") {
     return <ErrorPrompt />;

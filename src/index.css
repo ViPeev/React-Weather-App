@@ -222,6 +222,54 @@ time {
   font-size: clamp(1.2rem, 6vw, 1.8rem);
 }
 
+.prompt-container .button-label {
+  margin-top: 1rem;
+}
+.prompt-container .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  row-gap: 10px;
+}
+.prompt-container .button-container button {
+  cursor: pointer;
+  width: 10rem;
+  height: 3rem;
+  background: #7f7fd5; /* fallback for old browsers */
+  background: url("./assets/images/Tesselation-Transition.jpg"), -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(145, 234, 228, 0.7411764706), rgba(134, 168, 231, 0.6862745098), rgba(127, 127, 213, 0.768627451)), url("./assets/images/Tesselation-Transition.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  border: false false false;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  font-size: clamp(1.2rem, 1.5vw, 1.9rem);
+  font-family: "Arima", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+  transition: 0.2s;
+}
+.prompt-container .button-container button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.prompt-container .button-container button.clear-button {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 6rem;
+  height: 2.5rem;
+  background: rgb(179, 20, 20);
+  column-gap: 5px;
+}
+
 body {
   background: #7f7fd5; /* fallback for old browsers */
   background: url("./assets/images/Tesselation-Transition.jpg"), -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* Chrome 10-25, Safari 5.1-6 */
@@ -264,7 +312,6 @@ body .main-container {
   border-top: 1.6rem solid #fff;
   border-bottom: 1.6rem solid #fff;
   padding-bottom: 2rem;
-  pointer-events: none;
   position: relative;
 }
 body .prompt-container {
@@ -279,11 +326,10 @@ body .prompt-container {
   border: false false false;
   border-radius: 10px;
   color: black;
-  pointer-events: none;
   background-color: rgb(255, 255, 255);
   padding: 2rem;
 }
-body .prompt-container svg {
+body .prompt-container > svg {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: rgb(179, 20, 20);

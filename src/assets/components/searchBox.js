@@ -1,9 +1,8 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-
-function SearchBox({handleSearch}) {
+function SearchBox({ handleSearch }) {
   let [query, setQuery] = useState("");
 
   const handleQuery = (evt) => {
@@ -14,13 +13,10 @@ function SearchBox({handleSearch}) {
     evt.preventDefault();
     handleSearch(query.trim());
     setQuery("");
-  }
+  };
 
   return (
-    <form 
-      onSubmit={submit}
-      className="input-box">
-
+    <form onSubmit={submit} className="input-box">
       <FontAwesomeIcon icon={faMagnifyingGlass} />
       <input
         onChange={handleQuery}

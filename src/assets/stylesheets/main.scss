@@ -2,20 +2,21 @@
 @import "reset";
 @import "input";
 @import "data";
+@import "buttons";
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@300&family=Gentium+Book+Plus&display=swap");
 
 body {
   @include gradient;
-  
+
   font-family: $mainFont;
   color: $mainFontColor;
   text-align: center;
-  
+
   .loader {
-    @include dimensions(2.5rem,2.5rem);
+    @include dimensions(2.5rem, 2.5rem);
     @include boxShadow;
     @include spin();
-    @include border(false,false,false,50%);
+    @include border(false, false, false, 50%);
 
     display: none;
     position: absolute;
@@ -24,43 +25,39 @@ body {
     top: calc(50% - 1.25rem);
     left: calc(50% - 1.25rem);
     transform: translate(-50%, -50%);
-    
+
     border-top: solid #7f7fd5 3px;
     border-right: solid #7f7fd5 3px;
     border-bottom: solid white 3px;
     border-left: solid white 3px;
   }
   .main-container {
-    @include dimensions(clamp(300px, 90%, 400px), clamp(550px,80vh,480px));
+    @include dimensions(clamp(300px, 90%, 400px), clamp(550px, 80vh, 480px));
     @include boxShadow-2;
     @include margin-center;
-    @include border(false,false,false,10px);
+    @include border(false, false, false, 10px);
     @include fade-in;
 
     border-top: 1.6rem solid #fff;
     border-bottom: 1.6rem solid #fff;
-    padding-bottom:2rem;
+    padding-bottom: 2rem;
 
-    pointer-events: none;
     position: relative;
-
   }
   .prompt-container {
     @include dimensions(clamp(300px, 28%, 500px), auto);
     @include flexContainer(center, center);
     @include boxShadow-2;
     @include margin-center;
-    @include border(false,false,false,10px);
+    @include border(false, false, false, 10px);
     color: black;
-
-    pointer-events: none;
     background-color: $bgColor;
     padding: 2rem;
 
-    & svg {
+    & > svg {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: rgb(179, 20, 20);
+      color: $bgError;
     }
   }
 }

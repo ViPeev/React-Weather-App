@@ -4,8 +4,10 @@ $secondaryFont: "Gentium Book Plus", Impact, Haettenschweiler,
 $mainFontColor: rgb(94, 88, 88);
 $secondaryFontColor: rgba(51, 50, 50, 0.87);
 $mainFontSize: clamp(1.4rem,6vw,2.1rem);
+$secondaryFontSize: clamp(1.2rem,1.5vw,1.9rem);
 $bgColor: rgb(255, 255, 255);
 $bgColor-opaque: rgba(255, 255, 255, 0.61);
+$bgError: rgb(179, 20, 20);
 $fontWeights: (
   "regular": 250,
   "medium": 400,

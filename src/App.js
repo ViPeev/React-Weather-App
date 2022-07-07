@@ -1,4 +1,4 @@
-import React, { useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import SearchBox from "./assets/components/searchBox";
 import Display from "./assets/components/display";
 import "./App.css";
@@ -8,12 +8,17 @@ const api = {
   base: "http://api.openweathermap.org/data/2.5/",
 };
 
+let prevSearches = localStorage.getItem("prevSearches")
+  ? JSON.parse(localStorage.getItem("prevSearches"))
+  : [];
+
 function App() {
   let [data, setData] = useState(undefined);
 
   const loader = useRef(null);
+
   const search = (query) => {
-    if(query){
+    if (query) {
       loader.current.style.display = "block";
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => {
@@ -24,6 +29,8 @@ function App() {
         })
         .then((resp) => {
           setData(resp);
+          prevSearches.unshift({ town: query, country: resp.sys.country });
+          localStorage.setItem("prevSearches", JSON.stringify(prevSearches));
         })
         .catch(() => {
           setData("Error");
@@ -38,13 +45,15 @@ function App() {
     <React.Fragment>
       <header>
         <nav>
-          <SearchBox
-            handleSearch={search}
-          />
+          <SearchBox handleSearch={search} />
         </nav>
         <div ref={loader} className="loader"></div>
       </header>
-      <Display handleData={data} />
+      <Display
+        handleData={data}
+        prevData={prevSearches}
+        handleSearch={search}
+      />
     </React.Fragment>
   );
 }
