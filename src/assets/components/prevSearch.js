@@ -7,7 +7,7 @@ function PrevSearchDisplay({ prevData, searchFunct }) {
   let searchDisplay;
 
   let clearFunct = () => {
-    localStorage.clear();
+    localStorage.removeItem("prevSearches");
     clearPrevSearches([]);
   };
 
