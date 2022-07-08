@@ -237,7 +237,7 @@ time {
 }
 .prompt-container .button-container button {
   cursor: pointer;
-  width: 10rem;
+  width: clamp(10rem, 10rem, 100%);
   height: 3rem;
   background: #7f7fd5; /* fallback for old browsers */
   background: url("./assets/images/Tesselation-Transition.jpg"), -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* Chrome 10-25, Safari 5.1-6 */

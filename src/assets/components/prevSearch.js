@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function PrevSearchDisplay({ prevData, searchFunct }) {
-  let [prevSearches, clearPrevSearches] = useState(prevData.slice(0, 5));
+  let data = Array.from(new Set(prevData));
+  let [prevSearches, clearPrevSearches] = useState(data.slice(0, 5));
   let searchDisplay;
 
   let clearFunct = () => {
@@ -12,9 +13,10 @@ function PrevSearchDisplay({ prevData, searchFunct }) {
   };
 
   let prevSearchButtons = prevSearches.map((elem, index) => {
+      let [town,country] = elem.split(" ");
     return (
-      <button key={index} type="button" onClick={() => searchFunct(elem.town)}>
-        {elem.town}, {elem.country}
+      <button key={index} type="button" onClick={() => searchFunct(town)}>
+        {town}, {country}
       </button>
     );
   });

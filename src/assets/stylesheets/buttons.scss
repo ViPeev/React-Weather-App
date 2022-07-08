@@ -11,7 +11,7 @@
 
     & button {
       cursor: pointer;
-      @include dimensions(10rem, 3rem);
+      @include dimensions(clamp(10rem,10rem,100%), 3rem);
       @include gradient();
       @include border(false, false, false, 10px);
       @include boxShadow-2;
