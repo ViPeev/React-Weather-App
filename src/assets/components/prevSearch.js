@@ -13,7 +13,7 @@ function PrevSearchDisplay({ prevData, searchFunct }) {
   };
 
   let prevSearchButtons = prevSearches.map((elem, index) => {
-      let [town,country] = elem.split(" ");
+      let [town,country] = elem.split(", ");
     return (
       <button key={index} type="button" onClick={() => searchFunct(town)}>
         {town}, {country}

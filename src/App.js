@@ -29,7 +29,7 @@ function App() {
         })
         .then((resp) => {
           setData(resp);
-          prevSearches.unshift(`${query.toLowerCase()} ${resp.sys.country}`);
+          prevSearches.unshift(`${query.toLowerCase()}, ${resp.sys.country}`);
           localStorage.setItem("prevSearches", JSON.stringify(prevSearches));
         })
         .catch(() => {

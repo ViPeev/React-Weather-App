@@ -11,10 +11,11 @@
 
     & button {
       cursor: pointer;
-      @include dimensions(clamp(10rem,10rem,100%), 3rem);
+      @include dimensions(clamp(10rem,14rem,100%), auto);
       @include gradient();
       @include border(false, false, false, 10px);
       @include boxShadow-2;
+      padding:0.6rem;
 
       font-size: $secondaryFontSize;
       font-family: $mainFont;
